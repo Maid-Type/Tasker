@@ -1,0 +1,121 @@
+.parent {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 32px;
+    width: 80vw;
+    position: relative;
+    box-shadow: -2px 5px 10px 5px rgba(0, 0, 0, 0.09);
+    border-radius: 15px;
+    padding: 1rem;
+    margin: 2rem 0 2rem 2rem;
+    left: -0%;
+}
+
+.emptyTasks {
+    font-size: 4rem;
+    padding: 2.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.04);
+    position: absolute;
+    top: 45%;
+    width: 60%;
+    left: 50%;
+    color: #031118;
+    transform: translate(-50%, -50%);
+    background-color: #f4f9fc;
+    border-radius: 15px;
+    box-shadow: -2px 5px 15px 10px rgba(175, 175, 175, 0.22);
+    text-shadow: -2px 2px 2px rgba(0, 134, 139, 0.2);
+}
+
+.emptyBg {
+   background-image: url('/assets/emptyBackground.jpg');
+    background-size: cover;
+    height: 80vh;
+}
+
+.addTask {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    box-shadow: -2px 5px 10px 5px rgba(175, 175, 175, 0.22);
+}
+
+.addTask button {
+    padding: 0.5rem;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.09);
+    width: auto;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: -2px 2px 2px 2px rgba(0, 0, 0, 0.11);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    color: #052731;
+}
+
+.addTask button:hover {
+    transform: scale(1.1);
+}
+
+.show {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    pointer-events: all;
+    animation: showAdd 0.5s ease forwards;
+    overflow-y: auto;
+}
+
+.hide {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    animation: hideAdd 0.5s ease forwards;
+}
+
+@keyframes showAdd {
+    0% {opacity: 0}
+    50% {opacity: 0.5}
+    100% {opacity: 1}
+}
+
+@keyframes hideAdd {
+    0% {opacity: 1}
+    50% {opacity: 0.5}
+    100% {opacity: 0}
+}
+
+@media screen and (max-width: 1750px)  {
+
+}
+
+@media screen and (max-width: 1500px) {
+    .parent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1250px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+    .parent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .parent {
+        grid-template-columns: repeat(1, 1fr);
+        width: 65%;
+    }
+}
