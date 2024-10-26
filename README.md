@@ -47,6 +47,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<strong>
+In case it's the first load please understand this project uses https://dashboard.render.com/ for data which can delay requests by 50 seconds or more on the first load
+</strong>
+
 The <strong>Tasker</strong> is a React application that helps you manage your daily tasks efficiently. It allows users to create, edit, and track tasks with features such as priority levels,history of tasks,and completion status.
 
 ### Features
