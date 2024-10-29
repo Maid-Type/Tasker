@@ -48,7 +48,6 @@ function CancelledTasks() {
     }
 
     function restoreTask(task) {
-        console.log(task);
         const fullArr = JSON.parse(sessionStorage.getItem("tasks")) || [];
         const updatedArr = fullArr.map((item) => item.taskID === task.taskID ? {...task,isTaskCompleted: false,isTaskDeleted: false}: item);
         sessionStorage.setItem("tasks", JSON.stringify(updatedArr));

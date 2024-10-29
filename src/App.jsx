@@ -72,8 +72,6 @@ function App() {
             if (!storedData) {
                 const res = await fetch(`${API_URL}tasks`);
                 const data = await res.json();
-                console.log(data);
-
 
                 sessionStorage.setItem('tasks', JSON.stringify(data));
             } else {

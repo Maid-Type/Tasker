@@ -69,7 +69,6 @@ export default function TaskManager() {
                 const getData = async () => {
                         try {
                                 dispatch({ type: 'isLoading', payload: true });
-                                console.log(sessionStorage.getItem('tasks'));
                                 const data = JSON.parse(sessionStorage.getItem('tasks')) || [];
                                 dispatch({ type: 'isLoading', payload: false });
                                 dispatch({ type: 'loadTasks', payload: data });

@@ -28,7 +28,6 @@ const reducer = (state, action) => {
         }
         case 'deleteComment': {
             const updatedComments = state.taskComments.filter((_, index) => index !== action.payload);
-            console.log(updatedComments);
 
             const data = JSON.parse(sessionStorage.getItem('tasks'));
             const updatedArray = data.map((item) => {
@@ -115,7 +114,6 @@ function Task({ task,handleTaskCompleted,handleTaskChange,shouldBeEdited = true,
     };
 
     const handleAddComment = () => {
-        console.log(comment);
         if (comment.trim().length > 3) {
             dispatch({ type: 'addComment', payload: comment });
             setComment('');
