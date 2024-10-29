@@ -64,12 +64,13 @@ function App() {
         }
     ];
 
-    const [tasks, setTasks] = useState(fallbackData);
 
     const getData = async () => {
         try {
             const storedData = sessionStorage.getItem('tasks');
             if (!storedData) {
+                sessionStorage.setItem('tasks', JSON.stringify(fallbackData));
+
                 const res = await fetch(`${API_URL}tasks`);
                 const data = await res.json();
 
