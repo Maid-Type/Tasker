@@ -90,6 +90,8 @@ function SearchTasks() {
 
         const lowerInput = inputValue.toLowerCase().trim();
 
+        console.log(tasks.length);
+
         return tasks.sort((a, b) => {
             const aDescription = a.taskDescription.toLowerCase();
             const bDescription = b.taskDescription.toLowerCase();
@@ -122,8 +124,8 @@ function SearchTasks() {
                         value={searchValue}
                         onChange={(e) => {
                             setSearchValue(e.target.value);
-                            setSelectedTask(null); // Reset selectedTask when a new search is made
-                            setError(null); // Clear any previous errors
+                            setSelectedTask(null);
+                            setError(null);
                             handleSearchTasks(e.target.value);
                         }}
                         ref={inputRef}
@@ -147,9 +149,9 @@ function SearchTasks() {
                     )}
                 </div>
             ) : (
-                <div className={searchValue.length > 0 ? `${styles.suggestions} ${styles.show}` : styles.suggestions}>
+                <div className={searchValue.length > 0 && getSortedTasks(tasks, searchValue).length !== 0 ? `${styles.suggestions} ${styles.show}` : styles.suggestions}>
                     {searchValue.length > 0 && getSortedTasks(tasks, searchValue).length === 0 ? (
-                        <p>No tasks found</p>
+                        <p className={styles.empty}>No tasks found</p>
                     ) : (
                         <ul>
                             {searchValue.length > 0 && getSortedTasks(tasks, searchValue).map((item) => (

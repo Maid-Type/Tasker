@@ -17,7 +17,7 @@
     border-radius: 15px;
     box-shadow: -5px 10px 20px -10px rgba(34, 236, 115, 0.22);
     animation: showAdd 0.5s ease forwards;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 .container > div:not(.errors):not(.exitModule) {
@@ -52,7 +52,7 @@
         top: 0;
     }
     100% {
-        top: -10%;
+        top: -5%;
     }
 }
 
